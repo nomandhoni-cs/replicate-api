@@ -27,7 +27,7 @@ app.get("/api/generate", async (req, res) => {
 
   try {
     const output = await replicate.run(model, { input });
-    res.json(output);
+    res.json({ caption: output });
   } catch (error) {
     res.status(500).json({ error: "Error running the model" });
   }
